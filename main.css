@@ -120,3 +120,21 @@ ol{
 .イラスト-3-hex { color: #F2C12E; }
 .イラスト-4-hex { color: #F28705; }
 .イラスト-5-hex { color: #F25835; }
+.botan {
+    font-weight: bold; /* 太字 */
+    text-decoration: none; /* 下線消す */
+    background: #03A678; /* 背景色は水色 */
+    padding: 15px 10px; /* 余白指定 */
+    border-radius: 20px; /* 角丸め */
+    width: 20em;
+    margin-top:5em;
+}
+
+    
+
+.botan:hover {
+    background: silver; /* 背景色を灰色 */
+    }
+.botanclass{
+    text-align: center;
+}
