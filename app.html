@@ -200,17 +200,17 @@
 //問題文のデータ
                 questions:{
                     0:{
-                        title: "長谷川君のチンチンはどんな形？",
-                        hint: "右利き",
+                        title: "",
+                        hint: "",
                         answers: [
-                            "左曲がり", "右曲がり", "ギザギザ"
+                            "", "", ""
                         ],
                         answerNum: 0,
                         description: ""
                     },
 
                     1:{
-                        title: "千葉県の県庁所在地はどこ？",
+                        title: "",
                         hint: "政令指定都市だよ！",
                         answers: [
                             "柏市", "銚子市", "千葉市"
@@ -317,19 +317,17 @@
 
                 // 次の問題に行く処理
                 nextQuestion(){
-
-                    if(this.currentQuestionNumber < Object.keys(this.questions).length - 1){
-                        this.currentQuestionNumber += 1;
-                        $('#answerCheckModal').modal('hide');
-                    }else{3
-                        $('#answerCheckModal').modal('hide');
-
-                        //すべての問題が解き終わったので、最終結果モーダルを表示する
-                        $('#answerEndedModal').modal({
-                            keyboard: false,
-                            backdrop: "static"
-                        });
-                    }                    
+                    function shuffleQuiz(questions) {
+                    for (let i = (questions.length - 1); 0 < i; i--) {
+      let random = Math.floor(Math.random() * (i + 1));
+      let selected = questions[i];
+      questions[i] = questions[random];
+      questions[random] = selected;
+    }
+    return array;
+  }
+  let quizId = ["01", "02", "03", "04", "05"];
+  shuffleQuiz(quizId);
                 },
 
                 reload(){
