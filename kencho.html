@@ -190,12 +190,13 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
     <script>
-
         var app = new Vue({
-
             el: "#app",
             data: {
-                questions:{
+                currentQuestionNumber: 0,
+                correctAnswerNum: 0,
+                isCorrect: true,
+                questions: {
     0: { 
         title: "画面の明るさを調節するにはどこをタップしますか？",
         answers: ["設定", "ギャラリー", "カメラ"],
@@ -349,81 +350,34 @@
     }
     },
 
-            }
-
-                
-
-                //変数
-                currentQuestionNumber: 0,   //現在の問題番号
-                currentQuestionData: [], //現在の問題データ
-                correctAnswerNum: 0,//正解した数
-                isCorrect: true,
-                questionsLength: 0
-
-
+    mounted() {
+            this.questionsLength = Object.keys(this.questions).length;
+        },
+        methods: {
+            getCurrentQuestionNumber() {
+                return this.currentQuestionNumber + 1;
             },
-
-            mounted() {
-
-                // ページが読み込まれたとき最初に呼ばれる関数
-
-                //問題の長さを自動的に設定する
-                this.questionsLength = Object.keys(this.questions).length;
-                
-            },
-
-            methods: {
-
-                // 処理を関数にして記述する
-
-                getCurrentQuestionNumber(){
-                    return this.currentQuestionNumber + 1;
-                },
-
-                //答えをチェックする処理
-                answerCheck(userChoiceNumber){
-
-                    if(userChoiceNumber == this.questions[this.currentQuestionNumber].answerNum){
-                        //正解！
-                        this.isCorrect = true;
-                        this.correctAnswerNum += 1;
-                    }else{
-                        this.isCorrect = false;
-                    }
-                    
-                    //結果を表示するモーダルを表示する
-                    $('#answerCheckModal').modal({
-                        keyboard: false,
-                        backdrop: "static"
-                    });
-                },
-
-                // 次の問題に行く処理
-                nextQuestion(){
-
-                    if(this.currentQuestionNumber < Object.keys(this.questions).length - 1){
-                        this.currentQuestionNumber += 1;
-                        $('#answerCheckModal').modal('hide');
-                    }else{3
-                        $('#answerCheckModal').modal('hide');
-
-                        //すべての問題が解き終わったので、最終結果モーダルを表示する
-                        $('#answerEndedModal').modal({
-                            keyboard: false,
-                            backdrop: "static"
-                        });
-                    }                    
-                },
-
-                reload(){
-                    location.reload();
+            answerCheck(userChoiceNumber) {
+                this.isCorrect = userChoiceNumber == this.questions[this.currentQuestionNumber].answerNum;
+                if (this.isCorrect) {
+                    this.correctAnswerNum += 1;
                 }
-
+                $('#answerCheckModal').modal('show');
+            },
+            nextQuestion() {
+                if (this.currentQuestionNumber < this.questionsLength - 1) {
+                    this.currentQuestionNumber += 1;
+                } else {
+                    $('#answerEndedModal').modal('show');
+                }
+                $('#answerCheckModal').modal('hide');
+            },
+            reload() {
+                location.reload();
             }
-
-        )
-
-    </script>
+        }
+    });
+</script>
 
 </body>
 
