@@ -191,154 +191,172 @@
 
     <script>
 
-        var app = new Vue({
+var app = new Vue({
 
-            el: "#app",
-            data: {
+el: "#app",
+data: {
 
-                //使いたい変数や配列などを定義する
+    //使いたい変数や配列などを定義する
 //問題文のデータ
-                questions:{
-                    0:{
-                        title: "",
-                        hint: "",
-                        answers: [
-                            "", "", ""
-                        ],
-                        answerNum: 0,
-                        description: ""
-                    },
+    questions:{
+        0:{
+            title: "アプリをインストールするためのアプリは何か？（androidスマホの場合）",
+            answers: [
+                "GooglePlay", "AppStore", "iTunes"
+            ],
+            answerNum: 0,
+            description: ""
+        },
 
-                    1:{
-                        title: "",
-                        hint: "政令指定都市だよ！",
-                        answers: [
-                            "柏市", "銚子市", "千葉市"
-                        ],
-                        answerNum: 2,
-                        description: ""
-                    },
+        1:{
+            title: "電源を落とす方法はなにか？",
+            answers: [
+                "電源ボタン長押し", "電源ボタンと音量ボタン同時押し", "電源ボタンを長押しし、電源を切るをスライドする"
+            ],
+            answerNum: 3,
+            description: ""
+        },
 
-                    2:{
-                        title: "東京都の県庁所在地はどこ？",
-                        hint: "世界で一番多くの人が乗り降りする駅があるよ！",
-                        answers: [
-                            "港区", "新宿区", "六本木"
-                        ],
-                        answerNum: 1,
-                        description: ""
-                    },
+        2:{
+            title: "東京都の県庁所在地はどこ？",
+            hint: "世界で一番多くの人が乗り降りする駅があるよ！",
+            answers: [
+                "港区", "新宿区", "六本木"
+            ],
+            answerNum: 1,
+            description: ""
+        },
 
-                    3:{
-                        title: "埼玉県の県庁所在地はどこ？",
-                        hint: "大きなアリーナがある場所だね！",
-                        answers: [
-                            "所沢市", "浦和市", "さいたま市"
-                        ],
-                        answerNum: 2,
-                        description: ""
-                    },
+        3:{
+            title: "埼玉県の県庁所在地はどこ？",
+            hint: "大きなアリーナがある場所だね！",
+            answers: [
+                "所沢市", "浦和市", "さいたま市"
+            ],
+            answerNum: 2,
+            description: ""
+        },
 
-                    4:{
-                        title: "群馬県の県庁所在地はどこ？",
-                        hint: "豚肉の生産量がトップクラス！",
-                        answers: [
-                            "前橋市", "高崎市", "館林市"
-                        ],
-                        answerNum: 0,
-                        description: ""
-                    },
+        4:{
+            title: "群馬県の県庁所在地はどこ？",
+            hint: "豚肉の生産量がトップクラス！",
+            answers: [
+                "前橋市", "高崎市", "館林市"
+            ],
+            answerNum: 0,
+            description: ""
+        },
 
-                    5:{
-                        title: "茨城県の県庁所在地はどこ？",
-                        hint: "納豆が有名！",
-                        answers: [
-                            "水戸市", "つくば市", "大洗町"
-                        ],
-                        answerNum: 0,
-                        description: ""
-                    },
-                    6:{
-                        title: "栃木県の県庁所在地はどこ？",
-                        hint: "ぎょうざが美味しい！",
-                        answers: [
-                            "日光市", "宇都宮市", "那須塩原市"
-                        ],
-                        answerNum: 1,
-                        description: ""
-                    }
-                },
-                
+        5:{
+            title: "茨城県の県庁所在地はどこ？",
+            hint: "納豆が有名！",
+            answers: [
+                "水戸市", "つくば市", "大洗町"
+            ],
+            answerNum: 0,
+            description: ""
+        },
+        6:{
+            title: "栃木県の県庁所在地はどこ？",
+            hint: "ぎょうざが美味しい！",
+            answers: [
+                "日光市", "宇都宮市", "那須塩原市"
+            ],
+            answerNum: 1,
+            description: ""
+        },
+        7:{
+            title: "栃木県の県庁所在地はどこ？",
+            hint: "ぎょうざが美味しい！",
+            answers: [
+                "日光市", "宇都宮市", "那須塩原市"
+            ],
+            answerNum: 1,
+            description: ""
+        },
+        8:{
+            title: "栃木県の県庁所在地はどこ？",
+            hint: "ぎょうざが美味しい！",
+            answers: [
+                "日光市", "宇都宮市", "那須塩原市"
+            ],
+            answerNum: 1,
+            description: ""
+        },
+    },
+    
 
-                //変数
-                currentQuestionNumber: 0,   //現在の問題番号
-                currentQuestionData: [], //現在の問題データ
-                correctAnswerNum: 0,//正解した数
-                isCorrect: true,
-                questionsLength: 0
+    //変数
+    currentQuestionNumber: 0,   //現在の問題番号
+    currentQuestionData: [], //現在の問題データ
+    correctAnswerNum: 0,//正解した数
+    isCorrect: true,
+    questionsLength: 0
 
 
-            },
+},
 
-            mounted() {
+mounted() {
 
-                // ページが読み込まれたとき最初に呼ばれる関数
+    // ページが読み込まれたとき最初に呼ばれる関数
 
-                //問題の長さを自動的に設定する
-                this.questionsLength = Object.keys(this.questions).length;
-                
-            },
+    //問題の長さを自動的に設定する
+    this.questionsLength = Object.keys(this.questions).length;
+    
+},
 
-            methods: {
+methods: {
 
-                // 処理を関数にして記述する
+    // 処理を関数にして記述する
 
-                getCurrentQuestionNumber(){
-                    return this.currentQuestionNumber + 1;
-                },
+    getCurrentQuestionNumber(){
+        return this.currentQuestionNumber + 1;
+    },
 
-                //答えをチェックする処理
-                answerCheck(userChoiceNumber){
+    //答えをチェックする処理
+    answerCheck(userChoiceNumber){
 
-                    if(userChoiceNumber == this.questions[this.currentQuestionNumber].answerNum){
-                        //正解！
-                        this.isCorrect = true;
-                        this.correctAnswerNum += 1;
-                    }else{
-                        this.isCorrect = false;
-                    }
-                    
-                    //結果を表示するモーダルを表示する
-                    $('#answerCheckModal').modal({
-                        keyboard: false,
-                        backdrop: "static"
-                    });
-                },
+        if(userChoiceNumber == this.questions[this.currentQuestionNumber].answerNum){
+            //正解！
+            this.isCorrect = true;
+            this.correctAnswerNum += 1;
+        }else{
+            this.isCorrect = false;
+        }
+        
+        //結果を表示するモーダルを表示する
+        $('#answerCheckModal').modal({
+            keyboard: false,
+            backdrop: "static"
+        });
+    },
 
-                // 次の問題に行く処理
-                nextQuestion(){
-                    function shuffleQuiz(questions) {
-                    for (let i = (questions.length - 1); 0 < i; i--) {
-      let random = Math.floor(Math.random() * (i + 1));
-      let selected = questions[i];
-      questions[i] = questions[random];
-      questions[random] = selected;
+    // 次の問題に行く処理
+    nextQuestion(){
+
+        if(this.currentQuestionNumber < Object.keys(this.questions).length - 1){
+            this.currentQuestionNumber += 1;
+            $('#answerCheckModal').modal('hide');
+        }else{3
+            $('#answerCheckModal').modal('hide');
+
+            //すべての問題が解き終わったので、最終結果モーダルを表示する
+            $('#answerEndedModal').modal({
+                keyboard: false,
+                backdrop: "static"
+            });
+        }                    
+    },
+
+    reload(){
+        location.reload();
     }
-    return array;
-  }
-  let quizId = ["01", "02", "03", "04", "05"];
-  shuffleQuiz(quizId);
-                },
 
-                reload(){
-                    location.reload();
-                }
+}
 
-            }
+})
 
-        })
-
-    </script>
+</script>
 
 </body>
 
