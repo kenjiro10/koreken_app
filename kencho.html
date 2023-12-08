@@ -190,14 +190,14 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
     <script>
+
         var app = new Vue({
-            el: "#app",
-            data: {
-                currentQuestionNumber: 0,
-                correctAnswerNum: 0,
-                isCorrect: true,
-                questions: {
-    0: { 
+
+            el: "#app", //Vueを適用する範囲を定義（今回は <div id="app"></div>の中に適用）
+            data: {     //使いたい変数や配列などを定義する    
+
+                questions:{ //問題文のデータ
+                    0: { 
         title: "画面の明るさを調節するにはどこをタップしますか？",
         answers: ["設定", "ギャラリー", "カメラ"],
         answerNum: 0
@@ -347,38 +347,71 @@
         answers: ["スマホを振る", "電話をかける", "Playストアを開く"],
         answerNum: 2,
         description: ""
-    }
+    
     },
 
-    mounted() {
-            this.questionsLength = Object.keys(this.questions).length;
-        },
-        methods: {
-            getCurrentQuestionNumber() {
-                return this.currentQuestionNumber + 1;
+    },
+
+                //必要となる変数を定義する
+                currentQuestionNumber: 0,   //現在の問題番号
+                currentQuestionData: [],    //現在の問題データ
+                correctAnswerNum: 0,        //正解した数
+                isCorrect: true,            //正解しているかどうか
+                questionsLength: 0          //出題数を管理する変数
+
+
             },
-            answerCheck(userChoiceNumber) {
-                this.isCorrect = userChoiceNumber == this.questions[this.currentQuestionNumber].answerNum;
-                if (this.isCorrect) {
-                    this.correctAnswerNum += 1;
+
+            mounted() {         //ページが読み込まれたとき最初に呼ばれる関数
+
+                //問題の長さを自動的に設定する
+                this.questionsLength = Object.keys(this.questions).length;
+                
+            },
+
+            methods: {      //関数を登録する場所
+
+                //現在の問題番号（1から始まる）を求める関数
+                getCurrentQuestionNumber(){
+                    
+                },
+
+                //答えをチェックする関数
+                answerCheck(userChoiceNumber){
+
+                },
+
+                //次の問題に行く処理（いじらない）
+                nextQuestion(){
+
+                    if(this.currentQuestionNumber < Object.keys(this.questions).length - 1){
+                        this.currentQuestionNumber += 1;         //最後の問題ではないので問題番号を1ずつ増やす
+                        $('#answerCheckModal').modal('hide');    //モーダルを隠す
+                    }else{
+                        //最後の問題なので問題番号は増やさない
+
+                        $('#answerCheckModal').modal('hide');     //モーダルを隠す   
+
+                        //すべての問題が解き終わったので、最終結果モーダルを表示する
+                        $('#answerEndedModal').modal({
+                            keyboard: false,
+                            backdrop: "static"
+                        });
+                    }                    
+                },
+
+                //画面を再読み込みする関数（いじらない）
+                reload(){
+                    location.reload();
                 }
-                $('#answerCheckModal').modal('show');
-            },
-            nextQuestion() {
-                if (this.currentQuestionNumber < this.questionsLength - 1) {
-                    this.currentQuestionNumber += 1;
-                } else {
-                    $('#answerEndedModal').modal('show');
-                }
-                $('#answerCheckModal').modal('hide');
-            },
-            reload() {
-                location.reload();
+
             }
-        }
-    });
-</script>
+
+        })
+
+    </script>
 
 </body>
 
 </html>
+

@@ -316,19 +316,15 @@
                 },
 
                 // 次の問題に行く処理
-                nextQuestion(){
-                    function shuffleQuiz(questions) {
-                    for (let i = (questions.length - 1); 0 < i; i--) {
-      let random = Math.floor(Math.random() * (i + 1));
-      let selected = questions[i];
-      questions[i] = questions[random];
-      questions[random] = selected;
-    }
-    return array;
-  }
-  let quizId = ["01", "02", "03", "04", "05"];
-  shuffleQuiz(quizId);
-                },
+               
+  nextQuestion() {
+                if (this.currentQuestionNumber < this.questionsLength - 1) {
+                    this.currentQuestionNumber += 1;
+                } else {
+                    $('#answerEndedModal').modal('show');
+                }
+                $('#answerCheckModal').modal('hide');
+            },
 
                 reload(){
                     location.reload();
