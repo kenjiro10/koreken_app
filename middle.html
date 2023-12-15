@@ -58,7 +58,7 @@
             <div class="row">
 
                 <div class="col-md-8 offset-md-2">
-                    全10問
+                    第{{questionCount}}問 / 全30問
                 </div>
 
                 <!-- 問題文を表示する領域 -->
@@ -355,18 +355,10 @@
                 currentQuestionData: [], //現在の問題データ
                 correctAnswerNum: 0,//正解した数
                 isCorrect: true,
-                questionsLength: 0
+                questionsLength: 0,
+                questionCount: 1,
 
 
-            },
-
-            mounted() {
-
-                // ページが読み込まれたとき最初に呼ばれる関数
-
-                //問題の長さを自動的に設定する
-                this.questionsLength = Object.keys(this.questions).length;
-                
             },
 
             methods: {
@@ -384,8 +376,10 @@
                         //正解！
                         this.isCorrect = true;
                         this.correctAnswerNum += 1;
+                        this.questionCount += 1;
                     }else{
                         this.isCorrect = false;
+                        this.questionCount += 1;
                     }
                     
                     //結果を表示するモーダルを表示する
@@ -398,7 +392,7 @@
                 // 次の問題に行く処理
                 nextQuestion(){
 
-                    if(this.currentQuestionNumber < Object.keys(this.questions).length - 1){
+                    if(this.questionCount < 11){
                         this.currentQuestionNumber += Math.floor(Math.random() * 3) + 1;
                         $('#answerCheckModal').modal('hide');
                     }else{3
