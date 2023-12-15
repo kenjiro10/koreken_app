@@ -58,7 +58,7 @@
             <div class="row">
 
                 <div class="col-md-8 offset-md-2">
-                    第{{getCurrentQuestionNumber()}}問 / 全{{questionsLength}}問
+                    全10問
                 </div>
 
                 <!-- 問題文を表示する領域 -->
@@ -351,8 +351,7 @@
             }
 
     },
-
-    currentQuestionNumber: Math.floor(Math.random() * 30),   //現在の問題番号
+                currentQuestionNumber: Math.floor(Math.random() * 6),   //現在の問題番号
                 currentQuestionData: [], //現在の問題データ
                 correctAnswerNum: 0,//正解した数
                 isCorrect: true,
@@ -400,7 +399,7 @@
                 nextQuestion(){
 
                     if(this.currentQuestionNumber < Object.keys(this.questions).length - 1){
-                        this.currentQuestionNumber += 1;
+                        this.currentQuestionNumber += Math.floor(Math.random() * 3) + 1;
                         $('#answerCheckModal').modal('hide');
                     }else{3
                         $('#answerCheckModal').modal('hide');
