@@ -351,7 +351,7 @@
             }
 
     },
-                currentQuestionNumber: Math.floor(Math.random() * 6),   //現在の問題番号
+                currentQuestionNumber: Math.floor(Math.random() * 30),   //現在の問題番号
                 currentQuestionData: [], //現在の問題データ
                 correctAnswerNum: 0,//正解した数
                 isCorrect: true,
@@ -366,7 +366,7 @@
                 // 処理を関数にして記述する
 
                 getCurrentQuestionNumber(){
-                    return this.currentQuestionNumber + 1;
+                    return this.currentQuestionNumber;
                 },
 
                 //答えをチェックする処理
@@ -393,7 +393,7 @@
                 nextQuestion(){
 
                     if(this.questionCount < 11){
-                        this.currentQuestionNumber += Math.floor(Math.random() * 3) + 1;
+                        this.currentQuestionNumber = Math.floor(Math.random() * 30);
                         $('#answerCheckModal').modal('hide');
                     }else{3
                         $('#answerCheckModal').modal('hide');
