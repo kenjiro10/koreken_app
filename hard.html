@@ -47,7 +47,7 @@
             <div class="row my-3">
 
                 <div class="col-12">
-                    <h1 class="text-center main-title">高齢者スマホ検定３級</h1>
+                    <h1 class="text-center main-title">高齢者スマホ検定上級</h1>
                     <p class="text-center">正しい操作方法を三つのうちから答えなさい</p>
                 </div>
 
@@ -191,294 +191,291 @@
 
     <script>
 
-        var app = new Vue({
+var app = new Vue({
 
-            el: "#app",
-            data: {
-                questions:{
-                    0:{
-                        title: "スマホで写真を削除するにはどうすればいいですか？",
-                        hint: "右利き",
-                        answers: [
-                            "画面を右にスワイプ", "ゴミ箱アイコンをタップ", "電源ボタンを押す"
-                        ],
-                        answerNum: 1,
-                        description: ""
-                    },
-                    1:{
-                        title: "Wi-Fiに接続するにはどこをタップしますか？",
-                        hint: "",
-                        answers: [
-                            "電話", "設定", "メッセージ"
-                        ],
-                        answerNum: 1,
-                        description: ""
-                    },
-                    2:{
-                        title: "スマートフォンに新しいアプリをインストールするために必要な手順はどれでしょうか？",
-                        hint: "世界で一番多くの人が乗り降りする駅があるよ！",
-                        answers: [
-                            "シャワーを浴びる", "アプリストアでアプリを検索し、ダウンロードボタンをタップ", "買い物リストを書く"
-                        ],
-                        answerNum: 1,
-                        description: ""
-                    },
-                    3:{
-                        title: "レジでのお会計時に必要な行動はどれでしょうか？",
-                        hint: "",
-                        answers: [
-                            "レシートを見ずに帰る", "任意の決済アプリを表示してバーコードを見せて読み取ってもらう", "支払いをする前にレジ袋をもらう"
-                        ],
-                        answerNum: 1,
-                        description: ""
-                    },
-                    4:{
-                        title: "スマートフォンで電話をかけるための適切な手順はどれでしょうか？",
-                        hint: "",
-                        answers: [
-                            "カメラを開いて写真を撮る", "電話アプリを開き、連絡先を選んで発信ボタンをタップ", "メッセージアプリでテキストを送る"
-                        ],
-                        answerNum: 1,
-                        description: ""
-                    },
-                    5:{
-                        title: "メールを送る際に必要な手順はどれでしょうか？",
-                        hint: "",
-                        answers: [
-                            "レシピを検索する", "メールアプリを開き、宛先を入力し、本文を書いて送信ボタンをタップ", "音楽をダウンロードする"
-                        ],
-                        answerNum: 1,
-                        description: ""
-                    },
-                    6:{
-                        title: "野々市市の施設を予約する際に正しい手順はどれでしょうか？",
-                        hint: "",
-                        answers: [
-                            "ゴルフのスイングを練習する", "野球の試合を観戦する", "市のウェブサイトで必要事項を入力し、予約ボタンをクリック"
-                        ],
-                        answerNum: 2,
-                        description: ""
-                    },
-                    7:{
-                        title: "アラームを設定するにはどのアプリを使いますか？",
-                        hint: "",
-                        answers: [
-                            "時計", "カレンダー", "音楽"
-                        ],
-                        answerNum: 0,
-                        description: ""
-                    },
-                    8:{
-                        title: "スマホのバッテリー残量を確認するにはどこを見ますか？",
-                        hint: "",
-                        answers: [
-                            "画面上部", "画面下部", "設定アプリ"
-                        ],
-                        answerNum: 0,
-                        description: ""
-                    },
-                    9:{
-                        title: "スクリーンショットを撮るためにはどうしますか？",
-                        hint: "",
-                        answers: [
-                            "ホームボタン長押し", "電源ボタン長押し", "画面を長押し"
-                        ],
-                        answerNum: 0,
-                        description: ""
-                    },
-                    10:{
-                        title: "スマホでの検索はどのアプリを使いますか？",
-                        hint: "",
-                        answers: [
-                            "ギャラリー", "ブラウザ", "カメラ"
-                        ],
-                        answerNum: 1,
-                        description: ""
-                    },
-                    11:{
-                        title: "スマホのアプリを更新するにはどうしますか？",
-                        hint: "",
-                        answers: [
-                            "スマホを振る", "電話をかける", "playストアを開く"
-                        ],
-                        answerNum: 2,
-                        description: ""
-                    },
-                    12:{
-                        title: "スマホのボリュームを上げるにはどうしますか？",
-                        hint: "",
-                        answers: [
-                            "画面をタップ", "音量ボタンを押す", "電源ボタンを押す"
-                        ],
-                        answerNum: 0,
-                        description: ""
-                    },
-                    13:{
-                        title: "スマホのモデルを確認するにはどこを見ますか？",
-                        hint: "",
-                        answers: [
-                            "設定の「端末情報」", "バッテリー", "カメラ"
-                        ],
-                        answerNum: 0,
-                        description: ""
-                    },
-                    14:{
-                        title: "スマホの画面をロックするにはどうしますか？",
-                        hint: "",
-                        answers: [
-                            "電源ボタンを押す", "ホームボタンを押す", "画面を二回タップする"
-                        ],
-                        answerNum: 0,
-                        description: ""
-                    },
-                    15:{
-                        title: "スマホで天気予報をチェックするにはどうしますか？",
-                        hint: "",
-                        answers: [
-                            "カレンダーを開く", "天気アプリを開く", "カレンダーアプリを開く"
-                        ],
-                        answerNum: 1,
-                        description: ""
-                    },
-                    16:{
-                        title: "新しいイベントをカレンダーに追加するにはどうしますか？",
-                        hint: "",
-                        answers: [
-                            "電話を掛ける", "メッセージを送る", "カレンダーアプリを開く"
-                        ],
-                        answerNum: 0,
-                        description: ""
-                    },
-                    17:{
-                        title: "スマホのストレージを確認するにはどこをタップしますか？",
-                        hint: "",
-                        answers: [
-                            "メール", "カメラ", "設定"
-                        ],
-                        answerNum: 0,
-                        description: ""
-                    },
-                    18:{
-                        title: "スマホで動画を見るにはどのアプリを開きますか？",
-                        hint: "",
-                        answers: [
-                            "カメラ", "YouTubeなど", "音楽"
-                        ],
-                        answerNum: 0,
-                        description: ""
-                    },
-                    19:{
-                        title: "スマホの言語設定を変更するにはどこをタップしますか？",
-                        hint: "",
-                        answers: [
-                            "ギャラリー", "カメラ", "設定"
-                        ],
-                        answerNum: 0,
-                        description: ""
-                    },
-                    20:{
-                        title: "アラームを設定するにはどのアプリを使いますか？",
-                        hint: "",
-                        answers: [
-                            "時計", "カレンダー", "音楽"
-                        ],
-                        answerNum: 0,
-                        description: ""
-                    },
-                    21:{
-                        title: "新しい連絡先を追加するにはどこをタップしますか？",
-                        hint: "",
-                        answers: [
-                            "メール", "連絡先", "メッセージ"
-                        ],
-                        answerNum: 0,
-                        description: ""
-                    },
-                    22:{
-                        title: "アプリを閉じるにはどうしますか？",
-                        hint: "",
-                        answers: [
-                            "バックボタンをタップ", "ホームボタンをタップ", "電源ボタンをタップ"
-                        ],
-                        answerNum: 0,
-                        description: ""
-                    },
-                    23:{
-                        title: "メッセージを削除する際、どの操作が正しいですか？",
-                        hint: "",
-                        answers: [
-                            "メッセージを左にスワイプ", "メッセージを長押ししてから削除を選択", "ボリュームを下げる"
-                        ],
-                        answerNum: 0,
-                        description: ""
-                    },
-                    24:{
-                        title: "スマートフォンの画面を回転させないようにするには？",
-                        hint: "",
-                        answers: [
-                            "設定 > 画面 > 自動回転を無効にする", "ホームボタンを押してから回転オプションを選択", "画面を二回タップ"
-                        ],
-                        answerNum: 0,
-                        description: ""
-                    },
-                    25:{
-                        title: "",
-                        hint: "",
-                        answers: [
-                            "", "", ""
-                        ],
-                        answerNum: 0,
-                        description: ""
-                    },
-                    26:{
-                        title: "バッテリーの節約モードを有効にする方法は？",
-                        hint: "",
-                        answers: [
-                            "設定 > ディスプレイ > バッテリー", "ホーム画面でバッテリーアイコンを長押し", "スマホを振る"
-                        ],
-                        answerNum: 0,
-                        description: ""
-                    },
-                    27:{
-                        title: "スマホを充電するときに必要な作業は？",
-                        hint: "",
-                        answers: [
-                            "お風呂に入れる", "雷を落とす", "充電ケーブルに接続する"
-                        ],
-                        answerNum: 0,
-                        description: ""
-                    },
-                    28:{
-                        title: "フリック入力の際「と」と打ちたい時どのような操作をしなければならないか",
-                        hint: "",
-                        answers: [
-                            "「あ」の左", "「た」の下", "「た」の上"
-                        ],
-                        answerNum: 1,
-                        description: ""
-                    },
-                    29:{
-                        title: "フリック入力の際「ゆ」と打ちたい時どのような操作をしなければならないか",
-                        hint: "",
-                        answers: [
-                            "「や」の上", "「や」の下", "「や」の左"
-                        ],
-                        answerNum: 0,
-                        description: ""
-                    },
-                    30:{
-                        title: "フリック入力の際「と」と打ちたい時どのような操作をしなければならないか",
-                        hint: "",
-                        answers: [
-                            "「は」の上", "「な」の右", "「は」をタップ"
-                        ],
-                        answerNum: 0,
-                        description: ""
-                    },
-                },
-                
+el: "#app",
+data: {
 
-                currentQuestionNumber: Math.floor(Math.random() * 30),   //現在の問題番号
+    //使いたい変数や配列などを定義する
+//問題文のデータ
+
+    questions:{
+        0:{
+            title: "アプリをインストールするためのアプリは何か？（androidスマホの場合）",
+            answers: [
+                "GooglePlay", "AppStore", "iTunes"
+            ],
+            answerNum: 0,
+            description: ""
+        },
+
+        1:{
+            title: "電源を落とす方法はなにか？",
+            answers: [
+                "電源ボタン長押しし、「電源を切る」をタップする", "電源ボタンと音量ボタン同時押し", "電源ボタンを長押しし、電源を切るをスライドする"
+            ],
+            answerNum: 0,
+            description: ""
+        },
+
+        2:{
+            title: "ホーム画面上でアプリをアンインストールするためのアイコンはどれか？",
+            
+            answers: [
+                "アプリ一覧から設定を開きアンインストールする", "アプリアイコンを長押しする", "ゴミ箱アプリに入れる"
+            ],
+            answerNum: 0,
+            description: ""
+        },
+
+        3:{
+            title: "スマートフォンの画面をロック解除する際、一般的な方法はどれか？",
+
+            answers: [
+                "画面を叩く", "指紋や顔認証、パスワードを入力し解除する", "右方向へスワイプする"
+            ],
+            answerNum: 1,
+            description: ""
+        },
+
+        4:{
+            title: "スマートフォンのバッテリーを節約するための一般的な方法はどれか？",
+            
+            answers: [
+                "画面の明るさを下げる", "節約する方法はない", "アプリを開いたままにしておく"
+            ],
+            answerNum: 0,
+            description: ""
+        },
+
+        5:{
+            title: "スマートフォンのデータ使用量を制御するための設定はどれか？",
+
+            answers: [
+                "データセーバーをタップする", "機内モードをオンにする", "ネットワーク設定"
+            ],
+            answerNum: 0,
+            description: ""
+        },
+        6:{
+            title: "Google Playストアからアプリをダウンロードする際、アプリの信頼性を確認するための指標はどれか？",
+            answers: [
+                "ダウンロード数", "レビューと評価", "アプリのアイコンとデザイン"
+            ],
+            answerNum: 1,
+            description: ""
+        },
+        7:{
+            title: "電話の着信音を変更するための設定はどれか",
+            answers: [
+                "アプリ一覧から設定アプリを開き音と通知を選択し変更する", "アプリ一覧から設定アプリを開き、通話設定を選択し、変更する", "着信音を変えることは出来ない"
+            ],
+            answerNum: 1,
+            description: ""
+        },
+        8:{
+            title: "スマートフォンのカメラを起動するための一般的な手順はどれか？",
+            
+            answers: [
+                "ロックボタンを押す", "ホームボタンをダブルタップ", "カメラアイコンをタップする"
+            ],
+            answerNum: 2,
+            description: ""
+        },
+        9:{
+            title: "スマートフォンで写真を編集するための一般的なアプリはどれか？",
+            
+            answers: [
+                "Excel", "フォトショップ", "Word"
+            ],
+            answerNum: 1,
+            description: ""
+    },
+        10:{
+            title: "メッセージの送信と受信に使用される一般的なアプリはどれか？",
+            
+            answers: [
+                "GooglePlay", "電話", "LINE"
+            ],
+            answerNum: 2,
+            description: ""
+    },
+    11:{
+            title: "スマートフォンのバックアップを取るための一般的なサービスはどれか？",
+            
+            answers: [
+                "Google Drive", "Spotify", "Netflix"
+            ],
+            answerNum: 0,
+            description: ""
+    },
+    12:{
+            title: "スマートフォンの言語を変更するための一般的な設定はどれか？",
+            
+            answers: [
+                "設定アプリを開き、[システム]→[言語]→[地域別の設定]をタップし、変更する", "設定アプリを開き、[ネットワークとインターネット]→[インターネット]をタップし、変更する", "音量ボタンを長押しし、地域、言語を選択する"
+            ],
+            answerNum: 0,
+            description: ""
+    },
+    13:{
+            title: "スマートフォンの音量を調整するための一般的な設定はどれか？",
+            
+            answers: [
+                "セキュリティ設定", "ディスプレイ設定", "サウンド設定"
+            ],
+            answerNum:2,
+            description: ""
+    },
+    14:{
+            title: "Googleマップで目的地を検索するための一般的な手順はどれか？",
+            
+            answers: [
+                "Googleマップの検索バーに目的地を入力", "アプリ一覧からマップを選択する", "マップアプリをズームする"
+            ],
+            answerNum:0,
+            description: ""
+    },
+    15:{
+            title: "スマートフォンの画面を拡大表示するためのアクセシビリティ機能はどれか？",
+            
+            answers: [
+                "ダークモード", "ジェスチャー操作", "ズーム機能"
+            ],
+            answerNum:2,
+            description: ""
+    },
+    16:{
+            title: "スマートフォンでモバイルデータをオフにするための一般的な手順はどれか？",
+            
+            answers: [
+                "機内モードにする", "サウンド設定を変更する", "ネットワーク設定を変更する"
+            ],
+            answerNum:0,
+            description: ""
+    },
+    17:{
+            title: "スマートフォンでアラームを設定するための一般的なアプリはどれか？",
+            
+            answers: [
+                "カレンダー", "カウントダウンタイマー", "アラーム"
+            ],
+            answerNum:2,
+            description: ""
+    },
+    18:{
+            title: "スマートフォンでWi-Fiネットワークに接続するための一般的な手順はどれか？",
+            
+            answers: [
+                "Wi-Fi設定を開いてネットワークを選択", "Bluetoothを有効にする", "データ使用設定を開く"
+            ],
+            answerNum:0,
+            description: ""
+    },
+    19:{
+            title: "スマートフォンで音声検索を利用するための一般的なアシスタントはどれか？",
+            
+            answers: [
+                "Siri", "Cortana", "Googleアシスタント"
+            ],
+            answerNum:2,
+            description: ""
+    },
+    20:{
+            title: "Androidスマートフォンのデフォルトのメールアプリは何ですか？",
+            
+            answers: [
+                "Gmail", "Outlook", "Yahoo Mail"
+            ],
+            answerNum:0,
+            description: ""
+    },
+    21:{
+            title: "Androidスマートフォンの通知センターは何と呼ばれていますか？",
+            
+            answers: [
+                "Notification Hub", "Notification Center", "Status Bar"
+            ],
+            answerNum:2,
+            description: ""
+    },
+    22:{
+            title: "Androidデバイスで使用される標準的なファイルマネージャは何ですか？",
+            
+            answers: [
+                "File Explorer", "My Files", "File Manager"
+            ],
+            answerNum:1,
+            description: ""
+    },
+    23:{
+            title: "Android OSはどの会社によって開発されていますか？",
+            
+            answers: [
+                "Google", "Apple", "Microsoft"
+            ],
+            answerNum:0,
+            description: ""
+    },
+    24:{
+            title: "Androidデバイスで使用される音楽プレーヤーアプリは何ですか？",
+            
+            answers: [
+                " Music Player", "Play Music", "Spotify"
+            ],
+            answerNum:1,
+            description: ""
+    },
+    25:{
+            title: "Androidデバイスで使用される音楽プレーヤーアプリは何ですか？",
+            
+            answers: [
+                "Music Player", "Play Music", "Spotify"
+            ],
+            answerNum:1,
+            description: ""
+    },
+    26:{
+            title: "Androidデバイスで指紋認証の登録はどう行うか",
+            
+            answers: [
+                "最初から登録されている", "スマホの設定アプリから、[セキュリティ] → [指紋認証] をタップ。その後画面に表示される手順に沿って操作する", "指紋認証アプリをインストールし登録を行う"
+            ],
+            answerNum:1,
+            description: ""
+    },
+    27:{
+            title: "フリック入力の際「ろ」と打ちたい時どのような操作をしなければならないか",
+            
+            answers: [
+            "「ら」の下", "「ら」の右", "「ら」の左"
+            ],
+            answerNum:0,
+            description: ""
+    },
+    28:{
+            title: "フリック入力の際「き」と打ちたい時どのような操作をしなければならないか",
+            
+            answers: [
+            "「か」の上", "「か」の左", "「か」の下"
+            ],
+            answerNum:1,
+            description: ""
+    },
+    29:{
+            title: "フリック入力の際「と」と打ちたい時どのような操作をしなければならないか",
+            
+            answers: [
+            "「た」の下", "「た」の右", "「た」の左"
+            ],
+            answerNum:0,
+            description: ""
+    },
+
+
+},
+    
+currentQuestionNumber: Math.floor(Math.random() * 30),   //現在の問題番号
                 currentQuestionData: [], //現在の問題データ
                 correctAnswerNum: 0,//正解した数
                 isCorrect: true,
