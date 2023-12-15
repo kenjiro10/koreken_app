@@ -47,7 +47,7 @@
             <div class="row my-3">
 
                 <div class="col-12">
-                    <h1 class="text-center main-title">高齢者スマホ検定1級</h1>
+                    <h1 class="text-center main-title">高齢者スマホ検定３級</h1>
                     <p class="text-center">正しい操作方法を三つのうちから答えなさい</p>
                 </div>
 
@@ -58,7 +58,7 @@
             <div class="row">
 
                 <div class="col-md-8 offset-md-2">
-                    第{{getCurrentQuestionNumber()}}問 / 全{{questionsLength}}問
+                    第{{questionCount}}問 / 全10問
                 </div>
 
                 <!-- 問題文を表示する領域 -->
@@ -106,7 +106,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">問題{{getCurrentQuestionNumber()}}</h5>
+                        <h5 class="modal-title" id="exampleModalCenterTitle">問題{{questionCount - 1}}</h5>
                     </div>
                     
                     <div class="modal-body">
@@ -167,7 +167,7 @@
 
                             <div class="col-8">
 
-                                <p>{{questionsLength}} 問中 {{ correctAnswerNum }}問正解しました！</p>
+                                <p>10問中 {{ correctAnswerNum }}問正解しました！</p>
 
                             </div>
 
@@ -197,93 +197,295 @@
             data: {
                 questions:{
                     0:{
-                        title: "長谷川君のチンチンはどんな形？",
+                        title: "スマホで写真を削除するにはどうすればいいですか？",
                         hint: "右利き",
                         answers: [
-                            "左曲がり", "右曲がり", "ギザギザ"
-                        ],
-                        answerNum: 0,
-                        description: ""
-                    },
-
-                    1:{
-                        title: "千葉県の県庁所在地はどこ？",
-                        hint: "政令指定都市だよ！",
-                        answers: [
-                            "柏市", "銚子市", "千葉市"
-                        ],
-                        answerNum: 2,
-                        description: ""
-                    },
-
-                    2:{
-                        title: "東京都の県庁所在地はどこ？",
-                        hint: "世界で一番多くの人が乗り降りする駅があるよ！",
-                        answers: [
-                            "港区", "新宿区", "六本木"
+                            "画面を右にスワイプ", "ゴミ箱アイコンをタップ", "電源ボタンを押す"
                         ],
                         answerNum: 1,
                         description: ""
                     },
-
+                    1:{
+                        title: "Wi-Fiに接続するにはどこをタップしますか？",
+                        hint: "",
+                        answers: [
+                            "電話", "設定", "メッセージ"
+                        ],
+                        answerNum: 1,
+                        description: ""
+                    },
+                    2:{
+                        title: "スマートフォンに新しいアプリをインストールするために必要な手順はどれでしょうか？",
+                        hint: "世界で一番多くの人が乗り降りする駅があるよ！",
+                        answers: [
+                            "シャワーを浴びる", "アプリストアでアプリを検索し、ダウンロードボタンをタップ", "買い物リストを書く"
+                        ],
+                        answerNum: 1,
+                        description: ""
+                    },
                     3:{
-                        title: "埼玉県の県庁所在地はどこ？",
-                        hint: "大きなアリーナがある場所だね！",
+                        title: "レジでのお会計時に必要な行動はどれでしょうか？",
+                        hint: "",
                         answers: [
-                            "所沢市", "浦和市", "さいたま市"
+                            "レシートを見ずに帰る", "任意の決済アプリを表示してバーコードを見せて読み取ってもらう", "支払いをする前にレジ袋をもらう"
                         ],
-                        answerNum: 2,
+                        answerNum: 1,
                         description: ""
                     },
-
                     4:{
-                        title: "群馬県の県庁所在地はどこ？",
-                        hint: "豚肉の生産量がトップクラス！",
+                        title: "スマートフォンで電話をかけるための適切な手順はどれでしょうか？",
+                        hint: "",
                         answers: [
-                            "前橋市", "高崎市", "館林市"
+                            "カメラを開いて写真を撮る", "電話アプリを開き、連絡先を選んで発信ボタンをタップ", "メッセージアプリでテキストを送る"
                         ],
-                        answerNum: 0,
+                        answerNum: 1,
                         description: ""
                     },
-
                     5:{
-                        title: "茨城県の県庁所在地はどこ？",
-                        hint: "納豆が有名！",
+                        title: "メールを送る際に必要な手順はどれでしょうか？",
+                        hint: "",
                         answers: [
-                            "水戸市", "つくば市", "大洗町"
+                            "レシピを検索する", "メールアプリを開き、宛先を入力し、本文を書いて送信ボタンをタップ", "音楽をダウンロードする"
                         ],
-                        answerNum: 0,
+                        answerNum: 1,
                         description: ""
                     },
                     6:{
-                        title: "栃木県の県庁所在地はどこ？",
-                        hint: "ぎょうざが美味しい！",
+                        title: "野々市市の施設を予約する際に正しい手順はどれでしょうか？",
+                        hint: "",
                         answers: [
-                            "日光市", "宇都宮市", "那須塩原市"
+                            "ゴルフのスイングを練習する", "野球の試合を観戦する", "市のウェブサイトで必要事項を入力し、予約ボタンをクリック"
+                        ],
+                        answerNum: 2,
+                        description: ""
+                    },
+                    7:{
+                        title: "アラームを設定するにはどのアプリを使いますか？",
+                        hint: "",
+                        answers: [
+                            "時計", "カレンダー", "音楽"
+                        ],
+                        answerNum: 0,
+                        description: ""
+                    },
+                    8:{
+                        title: "スマホのバッテリー残量を確認するにはどこを見ますか？",
+                        hint: "",
+                        answers: [
+                            "画面上部", "画面下部", "設定アプリ"
+                        ],
+                        answerNum: 0,
+                        description: ""
+                    },
+                    9:{
+                        title: "スクリーンショットを撮るためにはどうしますか？",
+                        hint: "",
+                        answers: [
+                            "ホームボタン長押し", "電源ボタン長押し", "画面を長押し"
+                        ],
+                        answerNum: 0,
+                        description: ""
+                    },
+                    10:{
+                        title: "スマホでの検索はどのアプリを使いますか？",
+                        hint: "",
+                        answers: [
+                            "ギャラリー", "ブラウザ", "カメラ"
                         ],
                         answerNum: 1,
                         description: ""
-                    }
+                    },
+                    11:{
+                        title: "スマホのアプリを更新するにはどうしますか？",
+                        hint: "",
+                        answers: [
+                            "スマホを振る", "電話をかける", "playストアを開く"
+                        ],
+                        answerNum: 2,
+                        description: ""
+                    },
+                    12:{
+                        title: "スマホのボリュームを上げるにはどうしますか？",
+                        hint: "",
+                        answers: [
+                            "画面をタップ", "音量ボタンを押す", "電源ボタンを押す"
+                        ],
+                        answerNum: 0,
+                        description: ""
+                    },
+                    13:{
+                        title: "スマホのモデルを確認するにはどこを見ますか？",
+                        hint: "",
+                        answers: [
+                            "設定の「端末情報」", "バッテリー", "カメラ"
+                        ],
+                        answerNum: 0,
+                        description: ""
+                    },
+                    14:{
+                        title: "スマホの画面をロックするにはどうしますか？",
+                        hint: "",
+                        answers: [
+                            "電源ボタンを押す", "ホームボタンを押す", "画面を二回タップする"
+                        ],
+                        answerNum: 0,
+                        description: ""
+                    },
+                    15:{
+                        title: "スマホで天気予報をチェックするにはどうしますか？",
+                        hint: "",
+                        answers: [
+                            "カレンダーを開く", "天気アプリを開く", "カレンダーアプリを開く"
+                        ],
+                        answerNum: 1,
+                        description: ""
+                    },
+                    16:{
+                        title: "新しいイベントをカレンダーに追加するにはどうしますか？",
+                        hint: "",
+                        answers: [
+                            "電話を掛ける", "メッセージを送る", "カレンダーアプリを開く"
+                        ],
+                        answerNum: 0,
+                        description: ""
+                    },
+                    17:{
+                        title: "スマホのストレージを確認するにはどこをタップしますか？",
+                        hint: "",
+                        answers: [
+                            "メール", "カメラ", "設定"
+                        ],
+                        answerNum: 0,
+                        description: ""
+                    },
+                    18:{
+                        title: "スマホで動画を見るにはどのアプリを開きますか？",
+                        hint: "",
+                        answers: [
+                            "カメラ", "YouTubeなど", "音楽"
+                        ],
+                        answerNum: 0,
+                        description: ""
+                    },
+                    19:{
+                        title: "スマホの言語設定を変更するにはどこをタップしますか？",
+                        hint: "",
+                        answers: [
+                            "ギャラリー", "カメラ", "設定"
+                        ],
+                        answerNum: 0,
+                        description: ""
+                    },
+                    20:{
+                        title: "アラームを設定するにはどのアプリを使いますか？",
+                        hint: "",
+                        answers: [
+                            "時計", "カレンダー", "音楽"
+                        ],
+                        answerNum: 0,
+                        description: ""
+                    },
+                    21:{
+                        title: "新しい連絡先を追加するにはどこをタップしますか？",
+                        hint: "",
+                        answers: [
+                            "メール", "連絡先", "メッセージ"
+                        ],
+                        answerNum: 0,
+                        description: ""
+                    },
+                    22:{
+                        title: "アプリを閉じるにはどうしますか？",
+                        hint: "",
+                        answers: [
+                            "バックボタンをタップ", "ホームボタンをタップ", "電源ボタンをタップ"
+                        ],
+                        answerNum: 0,
+                        description: ""
+                    },
+                    23:{
+                        title: "メッセージを削除する際、どの操作が正しいですか？",
+                        hint: "",
+                        answers: [
+                            "メッセージを左にスワイプ", "メッセージを長押ししてから削除を選択", "ボリュームを下げる"
+                        ],
+                        answerNum: 0,
+                        description: ""
+                    },
+                    24:{
+                        title: "スマートフォンの画面を回転させないようにするには？",
+                        hint: "",
+                        answers: [
+                            "設定 > 画面 > 自動回転を無効にする", "ホームボタンを押してから回転オプションを選択", "画面を二回タップ"
+                        ],
+                        answerNum: 0,
+                        description: ""
+                    },
+                    25:{
+                        title: "",
+                        hint: "",
+                        answers: [
+                            "", "", ""
+                        ],
+                        answerNum: 0,
+                        description: ""
+                    },
+                    26:{
+                        title: "バッテリーの節約モードを有効にする方法は？",
+                        hint: "",
+                        answers: [
+                            "設定 > ディスプレイ > バッテリー", "ホーム画面でバッテリーアイコンを長押し", "スマホを振る"
+                        ],
+                        answerNum: 0,
+                        description: ""
+                    },
+                    27:{
+                        title: "スマホを充電するときに必要な作業は？",
+                        hint: "",
+                        answers: [
+                            "お風呂に入れる", "雷を落とす", "充電ケーブルに接続する"
+                        ],
+                        answerNum: 0,
+                        description: ""
+                    },
+                    28:{
+                        title: "フリック入力の際「と」と打ちたい時どのような操作をしなければならないか",
+                        hint: "",
+                        answers: [
+                            "「あ」の左", "「た」の下", "「た」の上"
+                        ],
+                        answerNum: 1,
+                        description: ""
+                    },
+                    29:{
+                        title: "フリック入力の際「ゆ」と打ちたい時どのような操作をしなければならないか",
+                        hint: "",
+                        answers: [
+                            "「や」の上", "「や」の下", "「や」の左"
+                        ],
+                        answerNum: 0,
+                        description: ""
+                    },
+                    30:{
+                        title: "フリック入力の際「と」と打ちたい時どのような操作をしなければならないか",
+                        hint: "",
+                        answers: [
+                            "「は」の上", "「な」の右", "「は」をタップ"
+                        ],
+                        answerNum: 0,
+                        description: ""
+                    },
                 },
                 
 
-                //変数
-                currentQuestionNumber: 0,   //現在の問題番号
+                currentQuestionNumber: Math.floor(Math.random() * 30),   //現在の問題番号
                 currentQuestionData: [], //現在の問題データ
                 correctAnswerNum: 0,//正解した数
                 isCorrect: true,
-                questionsLength: 0
+                questionsLength: 0,
+                questionCount: 1,
 
 
-            },
-
-            mounted() {
-
-                // ページが読み込まれたとき最初に呼ばれる関数
-
-                //問題の長さを自動的に設定する
-                this.questionsLength = Object.keys(this.questions).length;
-                
             },
 
             methods: {
@@ -291,7 +493,7 @@
                 // 処理を関数にして記述する
 
                 getCurrentQuestionNumber(){
-                    return this.currentQuestionNumber + 1;
+                    return this.currentQuestionNumber;
                 },
 
                 //答えをチェックする処理
@@ -301,8 +503,10 @@
                         //正解！
                         this.isCorrect = true;
                         this.correctAnswerNum += 1;
+                        this.questionCount += 1;
                     }else{
                         this.isCorrect = false;
+                        this.questionCount += 1;
                     }
                     
                     //結果を表示するモーダルを表示する
@@ -315,8 +519,8 @@
                 // 次の問題に行く処理
                 nextQuestion(){
 
-                    if(this.currentQuestionNumber < Object.keys(this.questions).length - 1){
-                        this.currentQuestionNumber += 1;
+                    if(this.questionCount < 11){
+                        this.currentQuestionNumber = Math.floor(Math.random() * 30);
                         $('#answerCheckModal').modal('hide');
                     }else{3
                         $('#answerCheckModal').modal('hide');
